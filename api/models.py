@@ -125,10 +125,10 @@ class Friends(models.Model):
         unique_together = (('to_user', 'from_user'),)
 
 class Problem(models.Model):
-    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
 
 class Proposal(models.Model):
-    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     approved = models.BooleanField(default=False)
     message = models.TextField()
